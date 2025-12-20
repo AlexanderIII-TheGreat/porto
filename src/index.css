@@ -2,16 +2,55 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-
-html, body{
-    scroll-behavior: smooth;
+/* Global Fix untuk Smoothness & Anti-Scroll */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  /* Smooth scroll saat berpindah section */
+  scroll-behavior: smooth; 
+  /* Mencegah flickering pada elemen animasi */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: #f8fafc; /* default slate-50 */
 }
 
+/* Fix untuk Dark Mode */
+html.dark body {
+  background-color: #0f172a;
+}
+
+/* Mencegah elemen AOS mengedip sebelum muncul */
+[data-aos] {
+  pointer-events: none;
+  /* Tambahkan akselerasi hardware */
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.aos-animate {
+  pointer-events: auto;
+}
+
+/* Utility scrollbar */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari, Opera */
+/* Optimasi Animasi Floating agar tidak getar */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+.animate-float-safe {
+  animation: float 5s ease-in-out infinite;
+  will-change: transform; /* Kunci agar GPU yang bekerja, bukan CPU */
 }
