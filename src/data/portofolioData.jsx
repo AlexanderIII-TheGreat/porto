@@ -38,13 +38,13 @@ export const portfolioData = {
       },
             {
         id: 4,
-        img: "/assets/project4.png",
+        img: "/assets/project44.png",
         title: "Platform CCTV Management System",
         subtitle:
           "Solusi terbaik untuk masalah akses cctv yang terbatas",
         desc: "Platform ini memberikan solusi dari permasalahan yang sering dialami dalam hal monitoring cctv serta memberikan akses yang mudah dan cepat",
         demo: "#",
-        tags: ["Kotlin", "Golang", "PostgreSQL", "Redis", "WebRTC"],
+        tags: ["Kotlin", "Golang", "PostgreSQL", "Redis", "WebRTC", "AWS"],
       },
                   {
         id: 5,
