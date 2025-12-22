@@ -36,6 +36,27 @@ export const portfolioData = {
         demo: "#",
         tags: ["Vite", "Tailwind CSS", "JavaScript", "laravel", "Node.js", "MySql"],
       },
+            {
+        id: 4,
+        img: "/assets/project4.png",
+        title: "Platform CCTV Management System",
+        subtitle:
+          "Solusi untuk masalah akses cctv yang terbatas",
+        desc: "Platform ini memberikan solusi dari permasalahan yang sering dialami dalam hal monitoring cctv serta memberikan akses yang mudah dan cepat",
+        demo: "#",
+        tags: ["Kotlin", "Golang", "PostgreSQL", "Redis", "WebRTC"],
+      },
+                  {
+        id: 5,
+        img: "/assets/project2.png",
+        title: "Platform Company Profile",
+        subtitle:
+          "Memperkenalkan pada dunia tentang perusahaan A2M Jaya Teknologi",
+        desc: "Adalah sebuah website yang memegang peran dalam mempromosikan serta meningkatkan image perusahaan",
+        demo: "#",
+        tags: ["Vite", "Tailwind CSS", "JavaScript", "laravel", "Node.js", "MySql"],
+      },
+      
     ],
 
     certificates: [
