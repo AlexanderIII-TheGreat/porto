@@ -41,7 +41,7 @@ export const portfolioData = {
         img: "/assets/project4.png",
         title: "Platform CCTV Management System",
         subtitle:
-          "Solusi untuk masalah akses cctv yang terbatas",
+          "Solusi terbaik untuk masalah akses cctv yang terbatas",
         desc: "Platform ini memberikan solusi dari permasalahan yang sering dialami dalam hal monitoring cctv serta memberikan akses yang mudah dan cepat",
         demo: "#",
         tags: ["Kotlin", "Golang", "PostgreSQL", "Redis", "WebRTC"],
@@ -56,7 +56,7 @@ export const portfolioData = {
         demo: "#",
         tags: ["Vite", "Tailwind CSS", "JavaScript", "laravel", "Node.js", "MySql"],
       },
-      
+
     ],
 
     certificates: [
