@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1
+      - name: SSH and deploy on VPS
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
@@ -19,5 +19,10 @@ jobs:
           script: |
             cd /var/www/porto
             git pull origin main
-            npm install
+
+            rm -rf dist
+            npm ci
             npm run build
+
+            sudo nginx -t
+            sudo systemctl reload nginx
