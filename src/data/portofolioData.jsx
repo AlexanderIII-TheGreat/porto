@@ -44,7 +44,7 @@ export const portfolioData = {
           "Solusi terbaik untuk masalah akses cctv yang terbatas",
         desc: "Platform ini memberikan solusi dari permasalahan yang sering dialami dalam hal monitoring cctv serta memberikan akses yang mudah dan cepat",
         demo: "#",
-        tags: ["Kotlin", "Golang", "PostgreSQL", "Redis", "WebRTC", "AWS", "Android Studio"],
+        tags: ["Kotlin", "Golang", "PostgreSQL", "Redis", "WebRTC", "AWS", "Android Studio", "S3"],
       },
                   {
         id: 5,
