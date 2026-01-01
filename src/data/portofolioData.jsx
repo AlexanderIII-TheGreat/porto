@@ -20,7 +20,7 @@ export const portfolioData = {
 
       {
         id: 2,
-        img: "/assets/project2.png",
+        img: "/assets/pos.png",
         title: "PLatform POS (Point Of Sales)",
         subtitle: "Website Point Of Sales perusahaan A2M Jaya Teknologi.",
         desc: "Webiste ini adalah website yang digunakan oleh perusahaan untuk Memanagement setiap proses bisnis dengan platform yang modern.",
@@ -48,7 +48,7 @@ export const portfolioData = {
       },
                   {
         id: 5,
-        img: "/assets/project2.png",
+        img: "/assets/company.png",
         title: "Platform Company Profile",
         subtitle:
           "Memperkenalkan pada dunia tentang perusahaan A2M Jaya Teknologi",
@@ -59,13 +59,13 @@ export const portfolioData = {
 
                         {
         id: 6,
-        img: "/assets/project5.png",
+        img: "/assets/erpaa.png",
         title: "Platform ERPAA (Enterprice Resource Planing And Analyst)",
         subtitle:
           "Platform ERP berbasis AI Analyst",
         desc: "Sebuah aplikasi berbasis ERP dengan AI sebagai otaknya, setiap halaman disediakan AI Businese Analyst yang berperan dalam menangani serta memberi solusi dari masalah yang dialami oleh perusahaan",
         demo: "#",
-        tags: ["Vite", "Tailwind CSS", "JavaScript", "Golang", "Node.js", "MySql", "Redis", "AWS"],
+        tags: ["Vite", "Tailwind CSS", "JavaScript", "Golang", "Node.js", "MySql", "Redis", "AWS", "GEMINI AI"],
       },
 
     ],

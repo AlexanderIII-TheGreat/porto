@@ -8,7 +8,7 @@ const homeData = {
   ],
   description: "I build modern, responsive web apps with clean UI and smooth UX  blending design and code to create experiences that feel intuitive, fast, and delightful to use.",
 
-  img: "/assets/profile2.jpeg",
+  img: "/assets/fotome.jpeg",
   buttons: [
     {
       label: "Explore My Project",
