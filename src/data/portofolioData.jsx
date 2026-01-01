@@ -57,6 +57,17 @@ export const portfolioData = {
         tags: ["Vite", "Tailwind CSS", "JavaScript", "laravel", "Node.js", "MySql"],
       },
 
+                        {
+        id: 6,
+        img: "/assets/project5.png",
+        title: "Platform ERPAA (Enterprice Resource Planing And Analyst)",
+        subtitle:
+          "Platform ERP berbasis AI Analyst",
+        desc: "Sebuah aplikasi berbasis ERP dengan AI sebagai otaknya, setiap halaman disediakan AI Businese Analyst yang berperan dalam menangani serta memberi solusi dari masalah yang dialami oleh perusahaan",
+        demo: "#",
+        tags: ["Vite", "Tailwind CSS", "JavaScript", "Golang", "Node.js", "MySql", "Redis", "AWS"],
+      },
+
     ],
 
     certificates: [

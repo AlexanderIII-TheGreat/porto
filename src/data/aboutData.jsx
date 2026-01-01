@@ -5,7 +5,6 @@ const aboutData = {
 
     biodata: [
         { label: "Name", value: "Abiyyu Abdiffatir Al Majid", icon: "bx bx-id-card" },
-        { label: "Date of Birth", value: "April 18 2008", icon: "bx bx-calendar" },
         { label: "Place of Birth", value: "Sragen, Indonesia", icon: "bx bx-map" },
         { label: "Email", value: "abiyyu040@gmail.com", icon: "bx bx-envelope" },
         { label: "Phone", value: "+62 857 1200 6320", icon: "bx bx-phone" },
@@ -21,7 +20,7 @@ const aboutData = {
 
     aboutNarrative: {
         whoAmI: {
-            text: `Saya adalah seorang pengembang website yang berokus pada pengembangan website dinamis.`,
+            text: `Saya adalah seorang pengembang website yang berfokus pada pengembangan website dinamis dan mengedepankan ekslusifitas dalam setiap webiste yang saya buat.`,
             icon: "bx-info-circle"
         },
         approach: {
