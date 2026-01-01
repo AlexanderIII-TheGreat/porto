@@ -9,7 +9,7 @@ export const portfolioData = {
     projects: [
       {
         id: 1,
-        img: "/assets/erp.png",
+        img: "/assets/image.png",
         title: "Platform ERP (Enterprice Resource Planing)",
         subtitle:
           "Memperkenalkan kepada dunia mengenai siapa saya dan skill yang saya miliki.",
