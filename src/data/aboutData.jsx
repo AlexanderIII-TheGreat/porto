@@ -1,7 +1,7 @@
 const aboutData = {
     title: "About Me",
     subtitle: "Discover my journey, passions, and the story behind my work",
-    image: "/assets/profile.jpeg",
+    image: "/assets/hadesh.jpeg",
 
     biodata: [
         { label: "Name", value: "Abiyyu Abdiffatir Al Majid", icon: "bx bx-id-card" },
