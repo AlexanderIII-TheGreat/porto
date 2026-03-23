@@ -51,7 +51,7 @@ floatingIcons: [
 stats: [
   {
     label: "Experience",
-    value: "1+",
+    value: "2+",
     suffix: "Years",
     icon: "bx bx-briefcase",
   },

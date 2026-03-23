@@ -29,7 +29,7 @@ export const portfolioData = {
       },
       {
         id: 3,
-        img: "/assets/project3.png",
+        img: "/assets/ecommerce.png",
         title: "Platform Website E-Commerce",
         subtitle: "Website E-Commerce untuk menjual produk perusahaan.",
         desc: "Webiste ini memungkinkan perusahaan mempromosikan produk yang mereka produksi untuk diperjualbelikan untuk publik.",
@@ -38,7 +38,7 @@ export const portfolioData = {
       },
             {
         id: 4,
-        img: "/assets/project44.png",
+        img: "/assets/cctv.png",
         title: "Platform CCTV Management System",
         subtitle:
           "Solusi terbaik untuk masalah akses cctv yang terbatas",
@@ -67,6 +67,33 @@ export const portfolioData = {
         demo: "#",
         tags: ["Vite", "Tailwind CSS", "JavaScript", "Golang", "Node.js", "MySql", "Redis", "AWS", "GEMINI AI"],
       },
+      {
+  id: 7,
+  img: "/assets/travel.png",
+  title: "Platform Website Travel & Tour",
+  subtitle: "Platform digital untuk pencarian dan pemesanan wisata.",
+  desc: "Website ini memungkinkan pengguna mencari dan memesan paket perjalanan dengan sistem booking serta pembayaran online yang aman.",
+  demo: "#",
+  tags: ["Laravel", "Tailwind CSS", "JavaScript", "MySql", "Payment Gateway"],
+},
+{
+  id: 8,
+  img: "/assets/restaurant.png",
+  title: "A2M Restaurant – Website Restoran Modern",
+  subtitle: "Website branding dan pemesanan restoran.",
+  desc: "Website ini menyediakan menu interaktif, reservasi online, serta sistem pembayaran digital untuk meningkatkan pengalaman pelanggan.",
+  demo: "#",
+  tags: ["Laravel", "Tailwind CSS", "JavaScript", "MySql"],
+},
+{
+  id: 9,
+  img: "/assets/coffeeshop.png",
+  title: "A2M Coffee – Website Coffee Shop Modern",
+  subtitle: "Website branding dan pemesanan coffee shop.",
+  desc: "Platform ini memungkinkan pelanggan melihat menu, melakukan pre-order, serta melakukan pembayaran digital dengan mudah.",
+  demo: "#",
+  tags: ["Laravel", "Tailwind CSS", "JavaScript", "MySql", "Payment Gateway"],
+},
 
     ],
 
