@@ -1,44 +1,44 @@
-name: Deploy React to VPS
+# name: Deploy React to VPS
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: |
-            set -e
+#     steps:
+#       - name: Deploy via SSH
+#         uses: appleboy/ssh-action@v1.0.3
+#         with:
+#           host: ${{ secrets.VPS_HOST }}
+#           username: ${{ secrets.VPS_USER }}
+#           key: ${{ secrets.VPS_SSH_KEY }}
+#           script: |
+#             set -e
 
-            echo "== DEPLOY START =="
-            cd /var/www/porto
+#             echo "== DEPLOY START =="
+#             cd /var/www/porto
 
-            echo "== FETCH & RESET =="
-            git fetch origin
-            git reset --hard origin/main
+#             echo "== FETCH & RESET =="
+#             git fetch origin
+#             git reset --hard origin/main
 
-            echo "== CURRENT COMMIT =="
-            git log -1 --oneline
+#             echo "== CURRENT COMMIT =="
+#             git log -1 --oneline
 
-            echo "== CLEAN & BUILD =="
-            rm -rf node_modules dist
-            npm ci
-            npm run build
+#             echo "== CLEAN & BUILD =="
+#             rm -rf node_modules dist
+#             npm ci
+#             npm run build
 
-            echo "== VERIFY BUILD =="
-            ls -lah dist/assets
+#             echo "== VERIFY BUILD =="
+#             ls -lah dist/assets
 
-            echo "== NGINX RELOAD =="
-            sudo nginx -t
-            sudo systemctl reload nginx
+#             echo "== NGINX RELOAD =="
+#             sudo nginx -t
+#             sudo systemctl reload nginx
 
-            echo "== DEPLOY DONE =="
+#             echo "== DEPLOY DONE =="
