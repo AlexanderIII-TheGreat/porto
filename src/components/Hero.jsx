@@ -68,7 +68,7 @@ const Home = () => {
                 {homeData.title}
               </h1>
               <div className="h-8 lg:h-12 flex items-center" data-aos="fade-up" data-aos-delay="200">
-                <h2 className="text-xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent uppercase tracking-tight">
+                <h2 className="text-xl sm:text-3xl font-extrabold uppercase tracking-tight bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent">
                   {currentText}
                   <span className={`inline-block w-[2px] lg:w-[3px] h-6 lg:h-8 ml-1 bg-blue-600 align-middle ${showCursor ? "opacity-100" : "opacity-0"}`}></span>
                 </h2>
@@ -124,23 +124,47 @@ const Home = () => {
                 ))}
               </div>
 
-              {/* Stats Grid - Fixed Layout for Mobile */}
+              {/* Stats Grid - Ultra Premium Responsive Bento Layout */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4 pt-2">
                 {homeData.stats.map((item, index) => (
                   <div 
                     key={index} 
-                    className="group p-3 lg:p-5 rounded-2xl lg:rounded-3xl bg-white dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/50 transition-all duration-500 shadow-sm"
+                    className="relative overflow-hidden group p-4 lg:p-5 rounded-2xl lg:rounded-3xl bg-white/80 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/80 transition-all duration-500 hover:border-blue-500/50 hover:shadow-2xl dark:hover:shadow-blue-900/20 hover:-translate-y-1.5 flex flex-col justify-between min-h-[120px] sm:min-h-[130px] lg:min-h-[150px]"
                   >
-                    <div className="flex flex-col gap-1 lg:gap-2">
-                      <div className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center rounded-lg lg:rounded-xl bg-blue-600/10 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                        <i className={`${item.icon} text-lg lg:text-xl`}></i>
+                    {/* Interactive glowing background */}
+                    <div className="absolute -inset-px rounded-2xl lg:rounded-3xl bg-gradient-to-tr from-blue-600/5 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    
+                    {/* Decorative micro dot matrix background for modern feel */}
+                    <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] dark:bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:12px_12px] opacity-25 pointer-events-none" />
+
+                    <div className="flex flex-col h-full justify-between relative z-10">
+                      {/* Upper row: Icon & Suffix Tag */}
+                      <div className="flex justify-between items-start gap-2">
+                        <div 
+                          className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-600/10 to-indigo-600/5 dark:from-slate-800 dark:to-slate-900 border border-blue-500/10 dark:border-slate-700 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-all duration-500 shrink-0"
+                          style={{ color: item.color ? item.color : undefined }}
+                        >
+                          <i className={`${item.icon} text-base lg:text-lg`} style={{ color: item.color ? item.color : undefined }}></i>
+                        </div>
+
+                        {item.suffix && (
+                          <span 
+                            className="text-[7px] lg:text-[8px] font-black uppercase tracking-widest px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 group-hover:bg-blue-600/10 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"
+                            style={{ color: item.color ? item.color : undefined }}
+                          >
+                            {item.suffix}
+                          </span>
+                        )}
                       </div>
-                      <div>
-                        <p className="text-base lg:text-xl font-black text-slate-900 dark:text-white tracking-tighter">
-                          {item.value}
-                        </p>
-                        <p className="text-[8px] lg:text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">
+
+                      {/* Lower row: Label & Main Value */}
+                      <div className="mt-4 flex flex-col min-w-0">
+                        <h4 className="text-[8px] lg:text-[9px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500">
                           {item.label}
+                        </h4>
+                        
+                        <p className="text-[11px] sm:text-xs lg:text-[13px] font-black text-slate-950 dark:text-white tracking-tight leading-snug mt-1 uppercase break-words line-clamp-2">
+                          {item.value}
                         </p>
                       </div>
                     </div>

@@ -9,7 +9,7 @@ const aboutData = {
         { label: "Email", value: "abiyyu040@gmail.com", icon: "bx bx-envelope" },
         { label: "Phone", value: "+62 857 1200 6320", icon: "bx bx-phone" },
         { label: "Education", value: "SMK Negeri 1 Mondokan", icon: "bx bx-book" },
-        { label: "JOB", value: "WEB DEVELOPER", icon: "bx bx-award" },
+        { label: "Role", value: "Software Engineer", icon: "bx bx-award" },
     ],
 
     resume: {
@@ -20,11 +20,11 @@ const aboutData = {
 
     aboutNarrative: {
         whoAmI: {
-            text: `Saya adalah seorang pengembang website yang berfokus pada pengembangan website dinamis dan mengedepankan ekslusifitas dalam setiap webiste yang saya buat.`,
+            text: `Saya adalah seorang software engineer yang terbiasa dalam melakukan perancanga, pengembangan dan juga pemeliharaan sebuah software secara end-to-end serta berorientasi pada best practice dari setiap case itu sendiri.`,
             icon: "bx-info-circle"
         },
         approach: {
-            text: `Saya berfokus untuk menciptakan tampilan web yang elegan, bersih, dan mudah digunakan, dengan mengutamakan keseimbangan antara estetika dan pengalaman pengguna.`,
+            text: `Saya berfokus melakukan perancangan sebuah software yang dapat meningkatkan efisiensi serta efektifitas oprasional dari perusahaan serta membantu perusahaan bertumbuh menjadi lebih baik dengan pendekatan digitalisasi.`,
             icon: "bx-bulb"
         }
     }

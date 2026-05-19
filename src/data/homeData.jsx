@@ -1,8 +1,10 @@
 const homeData = {
   title: "Hi, I’m Abiyyu Abdiffatir Al Majid ",
   typingTexts: [
-    "FullStack Web Developer",
-    "DevOps Engginer",
+    "FullStack Developer",
+    "Network Enginner",
+    "IT Infrastructure Enginner",
+    "DevOps Engineer",
     "Master Of AWS",
     "Golang Programmer",
   ],
@@ -66,14 +68,14 @@ stats: [
   },
   {
     label: "Total Projects",
-    value: "10+",
+    value: "20+",
     suffix: "Completed",
     icon: "bx bx-code-alt",
   },
   {
-    label: "Current Role",
-    value: "WEB DEV",
-    suffix: "Backend",
+    label: "Role",
+    value: "Fullstack Developer",
+    suffix: "Network Engineer",
     icon: "bx bx-award",
   },
 ],
