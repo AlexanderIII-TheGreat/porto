@@ -14,11 +14,13 @@ const homeData = {
       label: "Explore My Project",
       href: "#",
       type: "primary",
+      icon: "bx-compass",
     },
     {
       label: "Download My CV",
       href: "#",
       type: "secondary",
+      icon: "bx-download",
     },
   ],
 floatingIcons: [

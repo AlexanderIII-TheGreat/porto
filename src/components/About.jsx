@@ -63,13 +63,24 @@ const About = () => {
                             ))}
                         </div>
 
-                        <button 
-                            onClick={() => Swal.fire({ title: "In Progress", text: "Resume is coming soon!", icon: "info" })}
-                            className="w-full sm:w-fit flex items-center justify-center gap-3 px-8 py-3 lg:py-4 bg-slate-900 dark:bg-white dark:text-slate-900 text-white font-bold rounded-xl lg:rounded-2xl hover:bg-blue-600 dark:hover:bg-blue-500 dark:hover:text-white transition-all duration-300 shadow-xl"
-                        >
-                            <i className="bx bx-cloud-download text-lg lg:text-xl"></i>
-                            <span className="text-xs lg:text-base">DOWNLOAD CV</span>
-                        </button>
+                        <div className="flex flex-col sm:flex-row gap-3 w-full" data-aos="fade-up">
+                            <a 
+                                href="/cv/ABIYYU ABDIFFATIR AL MAJID FULLSTACK DEVELOPER CV_20260427_224951_0000.pdf"
+                                download
+                                className="flex-1 flex items-center justify-center gap-2.5 px-6 py-3.5 bg-slate-900 dark:bg-white dark:text-slate-900 text-white font-bold rounded-xl lg:rounded-2xl hover:bg-blue-600 dark:hover:bg-blue-500 dark:hover:text-white transition-all duration-300 shadow-lg text-xs lg:text-sm uppercase tracking-wider"
+                            >
+                                <i className="bx bx-cloud-download text-lg"></i>
+                                Fullstack Developer CV
+                            </a>
+                            <a 
+                                href="/cv/cv networking Abiyyu abdiffatir al majid.pdf"
+                                download
+                                className="flex-1 flex items-center justify-center gap-2.5 px-6 py-3.5 border-2 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white font-bold rounded-xl lg:rounded-2xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 shadow-lg text-xs lg:text-sm uppercase tracking-wider"
+                            >
+                                <i className="bx bx-cloud-download text-lg"></i>
+                                Network Engineer CV
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
