@@ -9,7 +9,8 @@ const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-  const [showCvModal, setShowCvModal] = useState(false);
+  const [showNamecardModal, setShowNamecardModal] = useState(false);
+  const [isNamecardFlipped, setIsNamecardFlipped] = useState(false);
 
   useEffect(() => {
     const titles = homeData.typingTexts;
@@ -95,8 +96,9 @@ const Home = () => {
                             behavior: "smooth"
                           });
                         }
-                      } else if (btn.label === "Download My CV") {
-                        setShowCvModal(true);
+                      } else if (btn.label === "Lihat Kartu Nama Saya") {
+                        setIsNamecardFlipped(false);
+                        setShowNamecardModal(true);
                       } else {
                         if (!btn.href || btn.href === "#") {
                           Swal.fire({
@@ -217,80 +219,78 @@ const Home = () => {
         </div>
       </div>
 
-      {/* CV Download Modal */}
-      {showCvModal && (
+      {/* 3D Interactive Namecard Modal */}
+      {showNamecardModal && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md transition-all duration-300 animate-fade-in"
-          onClick={() => setShowCvModal(false)}
+          onClick={() => setShowNamecardModal(false)}
         >
+          {/* Elegant Close Button at Viewport Level */}
+          <button 
+            onClick={() => setShowNamecardModal(false)}
+            className="absolute top-6 right-6 z-[60] w-12 h-12 flex items-center justify-center rounded-full bg-white/10 dark:bg-slate-900/40 text-white hover:bg-white/20 dark:hover:bg-slate-800/60 transition-colors shadow-lg border border-white/10 backdrop-blur-md active:scale-90"
+            aria-label="Close"
+          >
+            <i className="bx bx-x text-2xl"></i>
+          </button>
+
+          {/* 3D Perspective Card Container */}
           <div 
-            className="relative max-w-sm sm:max-w-md w-full bg-white dark:bg-slate-900 rounded-3xl p-5 sm:p-6 lg:p-8 border border-slate-200 dark:border-slate-800 shadow-2xl transition-all duration-300 scale-100"
+            className="relative w-full max-w-[500px] aspect-[1.58/1] cursor-pointer"
+            style={{ perspective: "1500px" }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
-            <button 
-              onClick={() => setShowCvModal(false)}
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-sm"
+            {/* Spawn wrapper (handles scaling/initial spinning) */}
+            <div 
+              className="w-full h-full animate-namecard-spawn"
+              style={{ transformStyle: "preserve-3d" }}
             >
-              <i className="bx bx-x text-xl"></i>
-            </button>
-
-            <div className="text-center mb-4 sm:mb-6">
-              <span className="inline-block p-2 sm:p-3 rounded-full bg-blue-600/10 text-blue-600 mb-2 sm:mb-3">
-                <i className="bx bx-download text-xl sm:text-2xl"></i>
-              </span>
-              <h3 className="text-lg sm:text-xl font-extrabold text-slate-950 dark:text-white uppercase tracking-tight">
-                Select CV Profile
-              </h3>
-              <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">
-                Choose the professional resume profile that best matches your target requirements:
-              </p>
-            </div>
-
-            <div className="space-y-2.5 sm:space-y-3">
-              {/* Option 1: FullStack */}
-              <a 
-                href="/cv/ABIYYU ABDIFFATIR AL MAJID FULLSTACK DEVELOPER CV_20260427_224951_0000.pdf" 
-                download
-                onClick={() => setShowCvModal(false)}
-                className="flex items-center justify-between gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 hover:bg-blue-600 hover:border-blue-500 hover:text-white dark:hover:bg-blue-600 dark:hover:border-blue-500 group transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
+              {/* Flip wrapper (handles Y-axis flip transform) */}
+              <div 
+                onClick={() => setIsNamecardFlipped(!isNamecardFlipped)}
+                className="w-full h-full relative transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] select-none"
+                style={{ 
+                  transformStyle: "preserve-3d",
+                  transform: isNamecardFlipped ? "rotateY(180deg)" : "rotateY(0deg)" 
+                }}
               >
-                <div className="text-left min-w-0">
-                  <h4 className="text-[11px] sm:text-xs lg:text-sm font-black uppercase tracking-wider text-slate-900 dark:text-white group-hover:text-white transition-colors truncate">
-                    FullStack Developer
-                  </h4>
-                  <p className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 group-hover:text-blue-100 transition-colors font-medium mt-0.5 break-words">
-                    Laravel, React, Node.js, Golang, MySQL, AWS
-                  </p>
+                {/* Front Side */}
+                <div 
+                  className="absolute inset-0 w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-slate-200/10"
+                  style={{ 
+                    backfaceVisibility: "hidden",
+                    WebkitBackfaceVisibility: "hidden" 
+                  }}
+                >
+                  <img 
+                    src="/namecard/1.jpg" 
+                    alt="Namecard Front" 
+                    className="w-full h-full object-cover" 
+                  />
                 </div>
-                <div className="w-8 h-8 shrink-0 rounded-full bg-blue-600/10 text-blue-600 flex items-center justify-center group-hover:bg-white/20 group-hover:text-white transition-colors">
-                  <i className="bx bx-download text-base"></i>
-                </div>
-              </a>
 
-              {/* Option 2: Network Engineer */}
-              <a 
-                href="/cv/cv networking Abiyyu abdiffatir al majid.pdf" 
-                download
-                onClick={() => setShowCvModal(false)}
-                className="flex items-center justify-between gap-3 sm:gap-4 p-3 sm:p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 hover:bg-blue-600 hover:border-blue-500 hover:text-white dark:hover:bg-blue-600 dark:hover:border-blue-500 group transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
-              >
-                <div className="text-left min-w-0">
-                  <h4 className="text-[11px] sm:text-xs lg:text-sm font-black uppercase tracking-wider text-slate-900 dark:text-white group-hover:text-white transition-colors truncate">
-                    Network Engineer
-                  </h4>
-                  <p className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 group-hover:text-blue-100 transition-colors font-medium mt-0.5 break-words">
-                    Cisco CCNA, Basic Troubleshooting, AWS Cloud
-                  </p>
+                {/* Back Side */}
+                <div 
+                  className="absolute inset-0 w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-slate-200/10"
+                  style={{ 
+                    backfaceVisibility: "hidden",
+                    WebkitBackfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)" 
+                  }}
+                >
+                  <img 
+                    src="/namecard/2.jpg" 
+                    alt="Namecard Back" 
+                    className="w-full h-full object-cover" 
+                  />
                 </div>
-                <div className="w-8 h-8 shrink-0 rounded-full bg-blue-600/10 text-blue-600 flex items-center justify-center group-hover:bg-white/20 group-hover:text-white transition-colors">
-                  <i className="bx bx-download text-base"></i>
-                </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
       )}
+
+
 
       <style>{`
         @keyframes float {
@@ -312,6 +312,19 @@ const Home = () => {
         }
         .animate-fade-in {
           animation: fadeIn 0.2s ease-out forwards;
+        }
+        @keyframes namecardSpawn {
+          0% { 
+            opacity: 0; 
+            transform: scale(0.1) rotateY(-540deg) rotateZ(-30deg); 
+          }
+          100% { 
+            opacity: 1; 
+            transform: scale(1) rotateY(0deg) rotateZ(0deg); 
+          }
+        }
+        .animate-namecard-spawn {
+          animation: namecardSpawn 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
       `}</style>
     </section>

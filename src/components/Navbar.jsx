@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import navbarData from "../data/navbarData.jsx";
+import Logo from "./Logo";
+import AnimatedNavbarIcon from "./AnimatedNavbarIcon";
+import ThemeToggleIcon from "./ThemeToggleIcon";
 
 const Navbar = () => {
   const [activeId, setActiveId] = useState("home");
@@ -82,8 +85,11 @@ const Navbar = () => {
         scrolled ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6"
       }`}>
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-          <div className="text-xl font-bold dark:text-white tracking-tight">
-            ABIYYU<span className="text-blue-600">.</span>
+          <div className="flex items-center gap-3">
+            <Logo />
+            <div className="text-xl font-bold dark:text-white tracking-tight">
+              ABIYYU<span className="text-blue-600">.</span>
+            </div>
           </div>
           
           <div className="flex bg-slate-100 dark:bg-slate-800/50 p-1 rounded-xl relative overflow-hidden">
@@ -104,8 +110,8 @@ const Navbar = () => {
             ))}
           </div>
           
-          <button onClick={toggleDarkMode} className="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 dark:text-white transition-transform active:scale-90">
-            <i className={`bx ${isDarkMode ? 'bx-sun' : 'bx-moon'} text-lg`}></i>
+          <button onClick={toggleDarkMode} className="w-10 h-10 p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 dark:text-white transition-all active:scale-90 flex items-center justify-center overflow-hidden">
+            <ThemeToggleIcon isDarkMode={isDarkMode} />
           </button>
         </div>
       </nav>
@@ -137,7 +143,7 @@ const Navbar = () => {
                 <div className={`flex flex-col items-center transition-all duration-500 ${
                   activeId === item.id ? "text-white" : "text-slate-400"
                 }`}>
-                  <i className={`bx ${item.icon} text-2xl`}></i>
+                  <AnimatedNavbarIcon id={item.id} isActive={activeId === item.id} />
                   <span className={`text-[9px] font-black uppercase tracking-widest mt-1 transition-all duration-500 ${
                     activeId === item.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 absolute"
                   }`}>
@@ -151,11 +157,9 @@ const Navbar = () => {
             <div className="flex items-center justify-center h-14" style={{ width: `calc(100% / ${totalItems})` }}>
               <button 
                 onClick={toggleDarkMode} 
-                className={`w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 ${
-                  isDarkMode ? 'text-yellow-400' : 'text-slate-400'
-                }`}
+                className="w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 active:scale-90 overflow-hidden"
               >
-                <i className={`bx ${isDarkMode ? 'bx-sun' : 'bx-moon'} text-xl`}></i>
+                <ThemeToggleIcon isDarkMode={isDarkMode} />
               </button>
             </div>
           </div>

@@ -19,10 +19,10 @@ const homeData = {
       icon: "bx-compass",
     },
     {
-      label: "Download My CV",
+      label: "Lihat Kartu Nama Saya",
       href: "#",
       type: "secondary",
-      icon: "bx-download",
+      icon: "bx-id-card",
     },
   ],
 floatingIcons: [
